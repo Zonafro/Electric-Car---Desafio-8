@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+html {
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "menu"
+    "filter"
+    "main"
+    "footer";
+}
+
+.menu {
+  grid-area: menu;
+  background-color: black;
+  color: white;
+}
+.bars-menu {
+  border: 0.1em solid rgba(255, 255, 255, 0.755);
+  padding: 0.5em 0.5em 0.4em 0.4em;
+  border-radius: 0.2em;
+}
+.bars-menu:hover {
+  background-color: rgba(255, 255, 255, 0.326);
+}
+.title {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 1em;
+}
+.title > p {
+  flex-grow: 1;
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  font-size: large;
+}
+
+.items-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.items-menu > a {
+  text-decoration: none;
+}
+.items-menu > a:hover {
+  background-color: blue;
+}
+
+.filter {
+  grid-area: filter;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  border: 1px solid rgba(172, 114, 5, 0.326);
+  color: gray;
+}
+.filter > h4 {
+  padding-top: 0.8em;
+}
+
+.item-combo {
+  display: flex;
+  background-color: white;
+  padding: 0.5em;
+  margin: 0.3em;
+  border: 1px solid rgb(178, 174, 174);
+  border-radius: 0.2em;
+  text-decoration: none;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: black;
+  border: 1px solid rgba(172, 114, 5, 0.326);
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em;
+  background-color: white;
+  box-shadow: -1px 1px 7px 0px rgb(0 0 0 / 27%);
+  border-radius: 0.3em;
+}
+
+.card > img {
+  max-width: 400px;
+  max-height: 400px;
+  width: 300px;
+  height: 200px;
+}
+.card > p {
+  padding-top: 1em;
+}
+.card > button {
+  padding: 0.5em;
+  background-color: yellow;
+  color: black;
+  width: 40%;
+  box-shadow: -1px 1px 7px 0px rgb(0 0 0 / 27%);
+  border-radius: 0.3em;
+  border: 1px solid gray;
+  margin-top: 1em;
+}
+
+.card > button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background-color: yellow;
+  color: black;
+}
+
+@media (min-width: 576px) {
+  h1 {
+    color: purple;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px auto auto auto;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "menu menu menu menu menu"
+      "filter filter main main main"
+      "footer footer footer footer footer";
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .items-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: 0.3em;
+  }
+  .items-menu > a {
+    padding: 1em;
+    color: white;
+  }
+
+  .title {
+    justify-content: center;
+  }
+  .title > p {
+    flex-grow: 0;
+  }
+  .filter {
+    justify-content: start;
+    align-items: center;
+  }
+  .bars-menu {
+    display: none;
+  }
+
+  .main {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 992px) {
+  h1 {
+    color: chocolate;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "menu filter filter filter filter filter filter"
+      "menu main main main main main main"
+      "footer main main main main main main";
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .items-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    padding-top: 1em;
+  }
+  .title {
+    justify-content: center;
+  }
+  .title > p {
+    flex-grow: 0;
+  }
+
+  .main {
+    justify-content: flex-start;
+  }
+
+  .bars-menu {
+    display: none;
+  }
+}
